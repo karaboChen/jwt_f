@@ -20,11 +20,6 @@ const router = createRouter({
       name: '登入',
       component: () => import('../views/login.vue'),
     },
-    {
-      path: '/tt',
-      name: '登入123',
-      component: () => import('../views/tt.vue'),
-    }
   ]
 })
 

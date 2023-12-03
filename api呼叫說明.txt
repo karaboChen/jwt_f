@@ -1,0 +1,43 @@
+
+get 方式
+const ww = async () => {
+    let res = await Get_log('109','我不知道' );
+    console.log(res.data);
+}
+export const Get_log = (aa, cc) => instance.get(`/vvw/get?aa=${aa}&cc=${cc}`);
+
+[HttpGet("/vvw/get")]
+public IActionResult 試試看(string aa, string cc)
+   {
+      var word = $"幾個數量{aa}, 有多少{cc}";
+      return Ok(word);
+   }
+
+
+//-------------------------------------------------------------------
+
+
+
+const ww2 = async () => {
+    let res = await Get_log2({aa:'99999',bb:'ji'});
+    console.log(res.data);
+}
+
+export const Get_log2 = (e) => instance.post('/vvw/post',e);
+
+ [HttpPost("/vvw/post")]
+ public IActionResult 試試看2(範例 e)
+  {
+    var word = $"幾個數量{e.aa}, 有多少{e.bb}";
+     return Ok(word);
+  }
+
+
+    public class 範例  (類別)
+    {
+        public string aa { get; set; }
+        public string bb { get; set; }
+    }
+
+
+

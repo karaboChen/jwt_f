@@ -2,10 +2,23 @@
 import{ref} from 'vue'
 import { useRouter } from 'vue-router'
 import {useCounterStore} from '@/stores/counter'
-import {Get_key,Get_gg} from '@/backend/api'
+import {Get_key,Get_gg,Get_log,Get_log2} from '@/backend/api'
 const Store=useCounterStore()
-const    router = useRouter ()
+const router = useRouter ()
 const cc = ref('')
+
+const ww = async () => {
+    let res = await Get_log('109','我不知道' );
+    console.log(res.data);
+}
+
+const ww2 = async () => {
+    let res = await Get_log2({aa:'99999',bb:'ji'});
+    console.log(res.data);
+}
+
+
+
 const ss  = ()=>{
   cc.value =Store.count
 }
@@ -41,6 +54,8 @@ function vv(){
 
 <template>
   <main>
+    <button @click="ww">---------</button>
+    <button @click="ww2">----+----</button>
     <button @click="logo">獲得要使</button>
     <button @click="logo1">登入</button>
     <button @click="ss">顯示</button>
